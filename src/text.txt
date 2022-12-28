@@ -1,0 +1,16 @@
+
+#. Reducers are simply funcitons that (ultimately) returns some state 
+
+#. Action Creator - 
+        action creator basically is a function that dispatches an action to the reducer and then reducer goes and interprets the action and then manipulates the store 
+
+#. Error:
+    Uncaught Error: Actions must be plain objects. Instead, the actual type was:
+
+    Explanation:
+        Even tho if you haven't explicitely defined anything async but the "dispatch" function that you're using is async and this error happens 'coz of that.
+        
+    Resolution: 
+        To resolve the error, you will need to use "redux-thunk" and "applyMiddleware - from redux"
+        - add reux thunk middleware as the third param inside the store, that ought to solve the issue i.e., "applyMiddleware(thunk)"
+        - this also alows you to make async calls
